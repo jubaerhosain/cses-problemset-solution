@@ -33,13 +33,9 @@ void solve() {
 
     rep(i, 0, (1<<n)) { 
         int ans = i^(i>>1);
-        string s(n, '0');
-        rep(j, 0, n) {
-            if((ans>>j)&1) s[j] = '1';
-            else s[j] = '0';
-        }
-        reverse(all(s));
-        print(s);
+        rrep(j, n-1, 0)
+            cout << ((ans>>j)&1);
+        println;
     }
 }
 

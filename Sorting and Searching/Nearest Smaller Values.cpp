@@ -20,6 +20,7 @@ void solve() {
     vector<int> ans(n);
     rrep(i, n-1, 0) {
         auto it = set.lower_bound({a[i]+1, 0});
+        //auto it = set.upper_bound({a[i], 1e9});
         if(it != set.end()) {
             while(it != set.end()) {
                 ans[(*it).second] = i+1;  

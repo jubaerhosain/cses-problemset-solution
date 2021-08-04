@@ -38,18 +38,15 @@ void solve() {
     cout << left.rbegin()->first << " ";  
 
     rep(i, 1, n-k) {
-        pii remove = {a[i-1], i-1};
-        if(left.count(remove)) {
-            left.erase(remove);
-        } else {
-            right.erase(remove);
-        }
-
-        if(left.rbegin()->first < a[i+k-1]) {
+        if(left.count({a[i-1], i-1})) 
+            left.erase({a[i-1], i-1});
+        else 
+            right.erase({a[i-1], i-1});
+        
+        if(left.rbegin()->first < a[i+k-1]) 
             right.insert({a[i+k-1], i+k-1});
-        } else {
+        else 
             left.insert({a[i+k-1], i+k-1});
-        }
 
         while(left.size() < k/2 + k%2) {
             pii it = *right.begin();

@@ -21,11 +21,13 @@ auto zfunction(string &str) {
                 r++;
             r--;
             z[i] = r - l + 1;
-        } else {
+        } 
+        else {
             int j = i - l;
             if(z[j] < r-i+1) {
-                z[i] = z[i];
-            } else {
+                z[i] = z[j];
+            } 
+            else {
                 l = i;
                 while(r < n && str[r-l] == str[r])
                     r++;

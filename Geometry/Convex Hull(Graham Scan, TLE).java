@@ -28,6 +28,9 @@ public class Solution {
         if(points.length <= 3)
             return points;
         
+        //for primitive type used quick sort (worst case O(n*n))
+        //for wrapper class used merge sort(nlogn) eg: Integer instead of int
+        
         int n = points.length;
         long[] start = findBottomLeft(points, n);
         Arrays.sort(points, new Comparator<long[]>() {

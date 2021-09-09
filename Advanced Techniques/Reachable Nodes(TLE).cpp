@@ -104,8 +104,10 @@ void solve_problem() {
 
     //find reachable
     for(int i = 1; i <= scc_cnt; i++) {
-        for(int u = 1; u <= scc_cnt; u++) 
-            used[u] = false;
+//         for(int u = 1; u <= scc_cnt; u++) 
+//             used[u] = false;
+        //visited = bitset<50005>(0);
+        visited = visited & (~visited);
         dag_values[i] = find_reachable(i, -1);
     }
 
